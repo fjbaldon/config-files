@@ -9,6 +9,9 @@ set autoindent
 set smartindent
 set incsearch
 set scrolloff=8
+set splitright
+set splitbelow
+set clipboard+=unnamedplus
 
 call plug#begin()
 
@@ -31,9 +34,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Gruvbox
-let g:gruvbox_italic=1
 set termguicolors
-colo gruvbox
+colorscheme gruvbox
 
 " Conqueror of Completion
 " Some servers have issues with backup files, see #649.

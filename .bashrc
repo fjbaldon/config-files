@@ -34,3 +34,9 @@ alias dos="cd ~/Desktop/dos/TC/BIN/"
 
 # Aliases { Quicks }
 alias nv="nvim"
+
+PATH="/var/home/francis/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/var/home/francis/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/var/home/francis/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/var/home/francis/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/var/home/francis/perl5"; export PERL_MM_OPT;
