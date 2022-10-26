@@ -20,8 +20,17 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
+
+" Custom Remaps
+nnoremap ; :
+tnoremap <Esc> <C-u><C-d>
+
+" Floater
+cnoremap ;f :FloatermToggle<CR>
 
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
