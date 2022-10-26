@@ -1,4 +1,4 @@
-# config-files
+# dotfiles
 Config files that will turn you into a 10x developer
 
 
