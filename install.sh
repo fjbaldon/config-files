@@ -3,7 +3,7 @@
 echo "Installing..."
 
 rm -r ~/.bashrc  
-rm -r ~/.config.nvim/init.vim  
+rm -r ~/.config/nvim/init.vim  
 
 touch ~/.bashrc && touch ~/.config/nvim/init.vim
 
