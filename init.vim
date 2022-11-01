@@ -1,6 +1,7 @@
 set relativenumber
 set nu
 set nohlsearch
+set cursorline
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -39,12 +40,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" ColorColumn
+match Error /\%81v./
+ 
 " Remaps
 nnoremap <space> :
-
-" ColorColumn
-highlight ColorColumn ctermbg=magenta 
-call matchadd('ColorColumn', '\%81v', 100)                           
 
 " Floaterm 
 cnoremap ;; :FloatermToggle<CR>

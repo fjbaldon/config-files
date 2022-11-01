@@ -28,7 +28,6 @@ unset rc
 
 # Aliases { Host }
 alias upd="sudo dnf upgrade -y" 
-alias des="cd ~/Desktop/ && ls"
 alias dos="cd ~/Desktop/dos/TC/BIN/"
 
 # Aliases { Quicks }
