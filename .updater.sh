@@ -3,7 +3,6 @@
 echo "Syncing..."
 read -r -p "Enter commit message: " message
 
-cat ~/.bashrc > .bashrc
 cat ~/.config/nvim/init.vim > init.vim
 
 git add .
