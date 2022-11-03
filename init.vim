@@ -14,7 +14,6 @@ set scrolloff=8
 set splitright
 set splitbelow
 set clipboard+=unnamedplus
-set iskeyword+="-"
 
 call plug#begin()
 
@@ -60,8 +59,10 @@ nnoremap <C-l> <C-w>l
 match Error /\%81v./
 
 " Remaps
-nnoremap <space> :
-cnoremap df :Ex<CR>
+let mapleader = " "
+nnoremap ; :
+nnoremap : ;
+nnoremap <leader>df :Ex<CR>
 
 " Floaterm
 cnoremap ;; FloatermToggle<CR>
