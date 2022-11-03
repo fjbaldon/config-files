@@ -14,19 +14,17 @@ set scrolloff=8
 set splitright
 set splitbelow
 set clipboard+=unnamedplus
+let mapleader = " "
 
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'gruvbox-community/gruvbox' 
+Plug 'voldikss/vim-floaterm'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'voldikss/vim-floaterm'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'preservim/nerdtree'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
@@ -42,12 +40,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -65,16 +57,19 @@ nnoremap : ;
 nnoremap <leader>df :Ex<CR>
 
 " Floaterm
-cnoremap ;; FloatermToggle<CR>
+cnoremap ; FloatermToggle<CR>
 tnoremap <Esc> <C-u><C-d><CR>
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
 " Gruvbox
 set termguicolors
 colorscheme gruvbox
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_section_b = "%{get(g:,'coc_git_status','')} %{get(b:,'coc_git_status','')}"
+
+autocmd User CocGitStatusChange call s:update_git_status()
 
 " Conqueror of Completion
 " Some servers have issues with backup files, see #649.
