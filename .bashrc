@@ -30,5 +30,5 @@ unset rc
 alias upd="sudo dnf upgrade -y" 
 alias dos="cd ~/Desktop/dos/TC/BIN/"
 
-# Aliases { Quicks }
+# Shortcuts
 alias nv="nvim"

@@ -14,18 +14,20 @@ set scrolloff=8
 set splitright
 set splitbelow
 set clipboard+=unnamedplus
+set iskeyword+="-"
 
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'gruvbox-community/gruvbox' 
-Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-gitgutter'
+Plug 'voldikss/vim-floaterm'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'preservim/nerdtree'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
@@ -42,6 +44,12 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -50,19 +58,14 @@ nnoremap <C-l> <C-w>l
 
 " ColorColumn
 match Error /\%81v./
- 
+
 " Remaps
 nnoremap <space> :
+cnoremap df :Ex<CR>
 
-" Floaterm 
-cnoremap ;; :FloatermToggle<CR>
-tnoremap <Esc> <C-u><C-d>
-
-" NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" Floaterm
+cnoremap ;; FloatermToggle<CR>
+tnoremap <Esc> <C-u><C-d><CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
