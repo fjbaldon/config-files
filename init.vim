@@ -14,6 +14,7 @@ set scrolloff=8
 set splitright
 set splitbelow
 set clipboard+=unnamedplus
+let mapleader = " "
 
 call plug#begin()
 
@@ -27,10 +28,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 " Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -41,15 +42,14 @@ nnoremap <C-l> <C-w>l
 " ColorColumn
 match Error /\%81v./
 
-" Remaps
-nnoremap ; :
-nnoremap : ;
-
-" Coc Explorer
-nmap <space>df <Cmd>CocCommand explorer<CR>
+" Navigation / Remaps
+nnoremap <leader>e <Cmd>CocCommand explorer<CR>
+nnoremap <leader>f :CocList files<CR>
+nnoremap <leader>d :Ex<CR>
+nnoremap <leader>; :
 
 " Floaterm
-cnoremap ; FloatermToggle<CR>
+nnoremap <leader>h :FloatermToggle<CR>
 tnoremap <Esc> <C-u><C-d><CR>
 
 " Gruvbox
@@ -92,20 +92,11 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-
-" May need for vim (not neovim) since coc.nvim calculate byte offset by count
-" utf-8 byte sequence.
+" Conqueror of Completion
 set encoding=utf-8
-" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -163,10 +154,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -228,21 +215,3 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
