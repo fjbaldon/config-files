@@ -5,7 +5,7 @@ cat ~/.xinitrc > .xinitrc
 cat ~/.zprofile > .zprofile
 cat ~/.zshrc > .zshrc
 
-git add .
+git add --all
 read -p 'Enter commit message: ' message
-git commit -m $message
-git push origin master
+git commit -m $"message"
+git push origin
