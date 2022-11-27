@@ -104,3 +104,6 @@ end
   require('lspconfig')['jdtls'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['html'].setup {
+    capabilities = capabilities
+  }

@@ -9,6 +9,8 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
   use 'rebelot/kanagawa.nvim'
   use 'windwp/nvim-autopairs'
+  use 'lewis6991/gitsigns.nvim'
+  use 'numToStr/Comment.nvim'
 
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
