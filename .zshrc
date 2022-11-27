@@ -19,10 +19,9 @@ alias grep='grep --color=auto'
 
 # Custom aliases
 alias nv='nvim'
-alias zr='zathura'
-alias sx='nsxiv'
 alias sd='sudo poweroff'
 alias cdd='cd /mnt/hdd/'
+alias sht='/home/francis/sandbox/dos/TC/BIN/NONAME00.CPP'
 
 # Color and custom format
 autoload -U colors && colors
@@ -30,3 +29,8 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%M%{$fg[green]%}@%{$fg[blue]%}%n %{$fg[magent
 
 # Syntax Highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+LFCD="/home/francis/.config/lf/lfcd"
+if [ -f "$LFCD" ]; then
+  source "$LFCD"
+fi
