@@ -7,7 +7,7 @@ xset r rate 200 50
 xwallpaper --zoom ~/pictures/wp/wp1.jpg
 
 xautolock -time 10 -locker slock &
-xcompmgr &
+picom --backend glx --vsync &
 unclutter &
 slstatus &
 

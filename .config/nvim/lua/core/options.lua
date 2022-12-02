@@ -33,8 +33,8 @@ opt.signcolumn = 'yes'      -- Enables signcolumn
 -- Tabs, indent
 -----------------------------------------------------------
 opt.expandtab = true        -- Use spaces instead of tabs
-opt.shiftwidth = 2          -- Shift 4 spaces when tab
-opt.tabstop = 2             -- 1 tab == 4 spaces
+--opt.shiftwidth = 8          -- Shift 8 spaces when tab
+--opt.tabstop = 8             -- 1 tab == 8 spaces
 opt.smartindent = true      -- Autoindent new lines
 
 -----------------------------------------------------------

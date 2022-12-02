@@ -20,8 +20,6 @@ alias grep='grep --color=auto'
 # Custom aliases
 alias nv='nvim'
 alias sd='sudo poweroff'
-alias cdd='cd /mnt/hdd/'
-alias sht='/home/francis/sandbox/dos/TC/BIN/NONAME00.CPP'
 
 # Color and custom format
 autoload -U colors && colors
