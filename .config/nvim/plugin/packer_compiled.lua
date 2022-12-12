@@ -109,15 +109,10 @@ _G.packer_plugins = {
     path = "/home/francis/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox.nvim"] = {
+  ["kanagawa.nvim"] = {
     loaded = true,
-    path = "/home/francis/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/francis/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    path = "/home/francis/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,

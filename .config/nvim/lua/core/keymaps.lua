@@ -36,11 +36,3 @@ vim.keymap.set('n', '<Leader>e', ':Ex<CR>' )
 
 -- Close all windows and exit from Neovim with <Leader> and q
 vim.keymap.set('n', '<Leader>q', ':qa!<CR>')
-
------------------------------------------------------------
--- Applications and Plugins shortcuts
------------------------------------------------------------
-
--- Terminal mappings
-vim.keymap.set('n', '<C-t>', ':term<CR>' )   -- open
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')  -- exit

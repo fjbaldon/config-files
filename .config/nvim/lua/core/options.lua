@@ -28,13 +28,11 @@ opt.splitbelow = true       -- Horizontal split to the bottom
 opt.ignorecase = true       -- Ignore case letters when search
 opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.signcolumn = 'yes'      -- Enables signcolumn
+api.nvim_set_hl(0, 'SignColumn', { clear })
 
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
-opt.expandtab = true        -- Use spaces instead of tabs
---opt.shiftwidth = 8          -- Shift 8 spaces when tab
---opt.tabstop = 8             -- 1 tab == 8 spaces
 opt.smartindent = true      -- Autoindent new lines
 
 -----------------------------------------------------------
