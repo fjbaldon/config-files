@@ -1,13 +1,12 @@
 #!/bin/sh
 
-setxkbmap -option ctrl:nocaps
+setxkbmap -option "ctrl:swapcaps"
+xset r rate 190 35 
 xcape -e 'Control_L=Escape'
-setxkbmap -option "shift:both_capslock"
-xset r rate 200 50 
-xwallpaper --zoom ~/pictures/wp/wp1.jpg
+xwallpaper --zoom ~/pictures/0016.jpg
 
 xautolock -time 10 -locker slock &
-picom --backend glx --vsync &
+picom --vsync &
 unclutter &
 slstatus &
 
