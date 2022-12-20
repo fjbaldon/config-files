@@ -31,8 +31,8 @@ vim.keymap.set('n', '<Leader>s', ':w<CR>')
 -- Easy command-mode via <Leader> and ;
 vim.keymap.set('n', '<Leader>;', ':', { silent = false } )
 
--- Access netrw with <Leader> and e
-vim.keymap.set('n', '<Leader>e', ':Ex<CR>' )
-
 -- Close all windows and exit from Neovim with <Leader> and q
 vim.keymap.set('n', '<Leader>q', ':qa!<CR>')
+
+-- Fast saving with <Leader> and s
+vim.keymap.set('n', '<Leader>s', ':w<CR>')

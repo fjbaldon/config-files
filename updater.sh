@@ -1,9 +1,8 @@
 #!/bin/sh
 
 cp -r ~/.config/nvim .config
+cp -r ~/.config/lf .config
 cat ~/.xinitrc > ~/desktop/dotfiles/.xinitrc
-#cat ~/.zprofile > ~/desktop/dotfiles/.zprofile
-#cat ~/.zshrc > ~/desktop/dotfiles/.zshrc
 
 git add --all
 read -p "Enter commit message: " message
