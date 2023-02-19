@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env sh
 
 cp -r ~/.config/nvim .config
 
