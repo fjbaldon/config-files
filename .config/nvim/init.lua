@@ -263,22 +263,24 @@ cmp.setup {
 
 -- Additionals 
 require('nvim-autopairs').setup()
-
 vim.opt.relativenumber = true
 vim.opt.clipboard = 'unnamedplus'
-vim.cmd.set 'background=light'
-vim.cmd.set 'mouse='
-vim.cmd.highlight 'clear SignColumn'
-vim.keymap.set('n', '<leader>p', ':set background=dark<CR><bar>:highlight clear SignColumn<CR>')
-vim.keymap.set('n', '<leader>e', ':Ex<CR>')
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<leader>cc', ':set colorcolumn=80<CR>')
+vim.opt.mouse = ""
+vim.opt.background = "light"
+vim.cmd[[ syntax off ]]
+vim.cmd[[ highlight clear SignColumn ]]
+vim.cmd[[ match Error /\%81c/ ]]
 
-vim.cmd [[
-nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
-nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
-vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
-nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
-vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
-vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
-]]
+-- Keymaps
+vim.api.nvim_set_keymap('n', '<leader>e', ':Ex<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sr', '<cmd>lua require("telescope.builtin").resume()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>tb', ':lua ToggleBackground()<CR>', { noremap = true, silent = true })
+
+function ToggleBackground()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+  else
+    vim.o.background = "dark"
+  end
+  vim.cmd("highlight clear SignColumn")
+end
