@@ -2,10 +2,9 @@
 
 setxkbmap -option "ctrl:swapcaps"
 xcape -e 'Control_L=Escape'
-xset r rate 190 35 
+xset r rate 190 35
 hsetroot -solid "#282828"
 
-xautolock -time 10 -locker slock &
 picom --vsync &
 slstatus &
 
